@@ -6,6 +6,11 @@ import { FC, memo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 
+import EventCard from '../EventCard/EventCard';
+
+import { data } from '../../constants/api';
+
+// Необходимо передать id в key при подключении api!!!
 const EventList: FC = memo(() => {
   return (
     <Swiper
@@ -14,10 +19,11 @@ const EventList: FC = memo(() => {
       slidesPerView={'auto'}
       pagination={{ clickable: true }}
     >
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
+      {data[0].eventList.map((data, index) => (
+        <SwiperSlide>
+          <EventCard card={data} index={index} key={index} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 });

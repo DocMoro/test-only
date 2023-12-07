@@ -1,4 +1,7 @@
+import './vendor/normalize.scss';
+import './vendor/fonts.scss';
 import './App.scss';
+
 import EventList from './components/EventList/EventList';
 
 function App() {

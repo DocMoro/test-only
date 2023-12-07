@@ -1,8 +1,19 @@
+import './EventCard.scss';
 import { FC, memo } from "react";
 
-const EventCard: FC = memo(() => {
+import { IEventCard } from "../../constants/type";
+
+interface PropsEventCard {
+  card: IEventCard,
+  index: number
+}
+
+const EventCard: FC<PropsEventCard> = memo(({card, index}) => {
   return (
-    <div></div>
+    <div className={`event-card ${index % 2 ? 'event-card_width_two' : 'event-card_width_one'}`}>
+      <h3 className="event-card__title">{card.date}</h3>
+      <p className="event-card__text">{card.text}</p>
+    </div>
   );
 });
 
