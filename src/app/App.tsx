@@ -1,8 +1,8 @@
-import EventList from '../components/EventList/EventList';
+import EventWidget from '../components/EventWidget/EventWidget';
 
 function App() {
   return (
-    <EventList />
+    <EventWidget />
   );
 }
 
