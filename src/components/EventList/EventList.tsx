@@ -1,14 +1,10 @@
-import 'swiper/scss';
-import 'swiper/scss/pagination';
-import 'swiper/scss/navigation';
-import './EventList.scss';
 import { FC, memo } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation } from 'swiper/modules';
 
 import EventCard from '../EventCard/EventCard';
 
-import { data } from '../../constants/api';
+import { data } from '../../shared/constants/api';
 
 // Необходимо передать id в key при подключении api!!!
 const EventList: FC = memo(() => {

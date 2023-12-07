@@ -1,5 +1,4 @@
 import { FC, memo, useCallback } from 'react';
-import './ButtonTemplate.scss';
 
 interface PropsButtonTemplate {
   cbClick: () => void;

@@ -1,7 +1,6 @@
-import './EventCard.scss';
 import { FC, memo } from "react";
 
-import { IEventCard } from "../../constants/type";
+import { IEventCard } from "../../shared/constants/type";
 
 interface PropsEventCard {
   card: IEventCard,
