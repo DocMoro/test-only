@@ -1,0 +1,11 @@
+@import './shared/vendor/normalize.scss';
+@import './shared/vendor/fonts.scss';
+@import './shared/constants/vars.scss';
+@import './app/App.scss';
+@import 'swiper/scss';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/navigation';
+@import './shared/ui/ButtonTemplate/ButtonTemplate.scss';
+@import './components/EventCard/EventCard.scss';
+@import './components/EventList/EventList.scss';
+@import './components/EventWidget/EventWidget.scss';

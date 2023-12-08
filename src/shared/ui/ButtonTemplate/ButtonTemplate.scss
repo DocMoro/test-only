@@ -1,0 +1,32 @@
+.button-template {
+  width: 40px;
+  height: 40px;
+
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 50%;
+
+  background-size: 5px 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  transform: opacity .5s ease-in-out;
+
+  &_icon {
+    &_next {
+      background-image: url('../../assets/next.svg');
+    }
+
+    &_prev {
+      background-image: url('../../assets/prev.svg');
+    }
+  }
+
+  &:hover {
+    opacity: .5;
+  }
+
+  &_disabled {
+    opacity: .5;
+  }
+}
