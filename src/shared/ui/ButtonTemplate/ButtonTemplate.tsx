@@ -16,7 +16,7 @@ const ButtonTemplate: FC<PropsButtonTemplate> = memo(
     return (
       <button
         className={`button-template ${
-          disabled ? 'button-template_disabled' : ''
+          disabled ? 'button-template_state_not-active' : 'button-template_state_active'
         } ${
           type === 'next'
             ? 'button-template_icon_next'

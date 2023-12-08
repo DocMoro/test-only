@@ -1,8 +1,6 @@
 interface IEventCard {
-  date: string,
-  text: string
+  date: string;
+  text: string;
 }
 
-export type {
-  IEventCard,
-};
+export type { IEventCard };
