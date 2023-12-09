@@ -21,18 +21,20 @@ const EventBoard: FC<PropsEventBoard> = memo(
     useEffect(() => {
       gsap.to('.board__date_color_blue', {
         innerText: startDate,
-        duration: 1,
         snap: {
           innerText: 1,
         },
       });
-      gsap.to('.board__date_color_pink', {
-        innerText: endDate,
-        duration: 1,
-        snap: {
-          innerText: 1,
-        },
-      });
+      gsap.to('.board__btn-name_not-active', { opacity: 0 });
+      gsap
+        .timeline()
+        .to('.board__date_color_pink', {
+          innerText: endDate,
+          snap: {
+            innerText: 1,
+          },
+        })
+        .to('.board__btn-name_is-active', { opacity: 1 });
     }, [startDate, endDate]);
 
     return (
@@ -57,6 +59,7 @@ const EventBoard: FC<PropsEventBoard> = memo(
                   id={line.id}
                   key={line.id}
                   cbCount={cbCount}
+                  name={line.name}
                 />
               </li>
             ))}

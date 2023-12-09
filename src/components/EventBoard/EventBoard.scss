@@ -128,16 +128,6 @@ $half-parent: ($circle-size / 2);
       width: $item-size;
       height: $item-size;
       margin: -$half-item;
-
-      &:hover {
-        cursor: pointer;
-      }
-
-      &:hover .button-list__btn {
-        background-color: #f4f5f9;
-        transform: scale(1);
-        cursor: pointer;
-      }
     }
   }
 }
