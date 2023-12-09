@@ -27,6 +27,8 @@ const EventWidget: FC = memo(() => {
 
   return (
     <section className="event-widget" ref={boxRef}>
+      <div className="event-widget__line1"></div>
+      <div className="event-widget__line2"></div>
       <EventBoard
         current={count}
         eventLines={data}

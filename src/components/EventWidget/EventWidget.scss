@@ -6,10 +6,53 @@
   flex-grow: 3;
   flex-shrink: 0;
 
+  border-left: 1px solid rgba(#42567a, 0.1);
+  border-right: 1px solid rgba(#42567a, 0.1);
+
   &__counter {
     position: absolute;
     bottom: 295px;
     left: 80px;
+  }
+
+  &__line1 {
+    position: absolute;
+    left: 50%;
+    top: 0;
+
+    height: 100%;
+    width: 1px;
+
+    z-index: -1;
+
+    background-color: rgba(#42567a, 0.1);
+  }
+
+  &__line2 {
+    position: absolute;
+    left: 0;
+    top: 480px;
+
+    height: 1px;
+    width: 100%;
+
+    z-index: -1;
+    
+    background-color: rgba(#42567a, 0.1);
+  }
+}
+
+@media screen and (max-width: $laptop-width) {
+  .event-widget {
+    border: none;
+    
+    &__line1 {
+      display: none;
+    }
+  
+    &__line2 {
+      display: none;
+    }
   }
 }
 

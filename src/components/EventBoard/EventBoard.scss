@@ -1,11 +1,13 @@
+@use 'sass:math';
+
 $circle-size: 530px;
 $item-size: 56px;
 
-$half-item: ($item-size / 2);
-$half-parent: ($circle-size / 2);
+$half-item: math.div($item-size, 2);
+$half-parent: math.div($circle-size, 2);
 
 @mixin amount($nb-items) {
-  $angle: (360 / $nb-items);
+  $angle: math.div(360, $nb-items);
   $rot: 0;
 
   @for $i from 1 through $nb-items {
