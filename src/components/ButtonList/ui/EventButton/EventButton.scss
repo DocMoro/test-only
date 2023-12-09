@@ -7,4 +7,9 @@
   transition:
     transform 0.5s ease-in-out,
     background-color 0.5s ease-in-out;
+
+  &_is-active {
+    transform: scale(1);
+    background-color: #f4f5f9;
+  }
 }
