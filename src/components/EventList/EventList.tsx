@@ -7,11 +7,11 @@ import EventCard from '../EventCard/EventCard';
 import { data } from '../../shared/constants/api';
 
 interface PropsEventList {
-  current: number
+  current: number;
 }
 
 // Необходимо передать id в key при подключении api!!!
-const EventList: FC<PropsEventList> = memo(({current}) => {
+const EventList: FC<PropsEventList> = memo(({ current }) => {
   return (
     <Swiper
       modules={[Pagination, Navigation]}

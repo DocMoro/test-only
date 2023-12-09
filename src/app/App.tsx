@@ -1,9 +1,7 @@
 import EventWidget from '../components/EventWidget/EventWidget';
 
 function App() {
-  return (
-    <EventWidget />
-  );
+  return <EventWidget />;
 }
 
 export default App;

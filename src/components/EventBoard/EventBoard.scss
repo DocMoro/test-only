@@ -42,11 +42,11 @@ $half-parent: ($circle-size / 2);
   &__gradient {
     width: 5px;
     height: 120px;
-    background: linear-gradient(to bottom, #3877EE, #EF5DA8);
+    background: linear-gradient(to bottom, #3877ee, #ef5da8);
   }
 
   &__title {
-    color: #42567A;
+    color: #42567a;
     font-family: 'PTSans', Arial, Helvetica, sans-serif;
     font-size: 56px;
     font-style: normal;
@@ -62,7 +62,7 @@ $half-parent: ($circle-size / 2);
   &__date {
     display: flex;
     justify-content: center;
-  
+
     position: relative;
     z-index: -1;
 
@@ -134,7 +134,7 @@ $half-parent: ($circle-size / 2);
   &__subtitle {
     display: none;
 
-    color: #42567A;
+    color: #42567a;
     font-family: 'PTSans', Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-style: normal;
@@ -152,15 +152,15 @@ $half-parent: ($circle-size / 2);
     &__date {
       font-size: 100px;
     }
+
+    &__circle {
+      display: none;
+    }
   }
 }
 
 @media screen and (max-width: $mobile-width) {
   .board {
-    &__circle {
-      display: none;
-    }
-
     &__container {
       top: 59px;
     }

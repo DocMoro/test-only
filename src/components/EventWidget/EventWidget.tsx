@@ -22,6 +22,7 @@ const EventWidget: FC = memo(() => {
       gsap.context(() => {
         gsap.to('.board__circle', { rotation: deg });
         gsap.to('.board__circle__element', { rotation: -deg });
+        gsap.to('.swiper-wrapper', { opacity: 0 });
       }, boxRef);
       setCount(id);
     },
@@ -32,15 +33,20 @@ const EventWidget: FC = memo(() => {
     gsap.context(() => {
       gsap.to('.board__btn-name_not-active', { opacity: 0 });
       gsap
-      .timeline()
-      .to('.board__date_color_blue', {
-        innerText: startDate,
-        snap: {
-          innerText: 1,
-        },
-      })
-      .fromTo('.swiper-wrapper', { opacity: 0 , y: 25 }, { opacity: 1 , y: 0 })
-      .fromTo('.board__subtitle', { opacity: 0 , y: 25 }, { opacity: 1 , y: 0 }, '-=.5');
+        .timeline()
+        .to('.board__date_color_blue', {
+          innerText: startDate,
+          snap: {
+            innerText: 1,
+          },
+        })
+        .fromTo('.swiper-wrapper', { opacity: 0, y: 25 }, { opacity: 1, y: 0 })
+        .fromTo(
+          '.board__subtitle',
+          { opacity: 0, y: 25 },
+          { opacity: 1, y: 0 },
+          '-=.5'
+        );
       gsap
         .timeline()
         .to('.board__date_color_pink', {
