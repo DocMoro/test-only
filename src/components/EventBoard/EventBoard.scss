@@ -130,6 +130,21 @@ $half-parent: ($circle-size / 2);
       margin: -$half-item;
     }
   }
+
+  &__subtitle {
+    display: none;
+
+    color: #42567A;
+    font-family: 'PTSans', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+
+    margin: 0 20px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #c7cdd9;
+  }
 }
 
 @media screen and (max-width: $mobile-width) {
@@ -159,6 +174,10 @@ $half-parent: ($circle-size / 2);
       max-width: 123px;
 
       margin-left: 20px;
+    }
+
+    &__subtitle {
+      display: flex;
     }
   }
 }

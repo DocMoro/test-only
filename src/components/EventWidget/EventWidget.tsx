@@ -31,12 +31,16 @@ const EventWidget: FC = memo(() => {
   useEffect(() => {
     gsap.context(() => {
       gsap.to('.board__btn-name_not-active', { opacity: 0 });
-      gsap.to('.board__date_color_blue', {
+      gsap
+      .timeline()
+      .to('.board__date_color_blue', {
         innerText: startDate,
         snap: {
           innerText: 1,
         },
-      });
+      })
+      .fromTo('.swiper-wrapper', { opacity: 0 , y: 25 }, { opacity: 1 , y: 0 })
+      .fromTo('.board__subtitle', { opacity: 0 , y: 25 }, { opacity: 1 , y: 0 }, '-=.5');
       gsap
         .timeline()
         .to('.board__date_color_pink', {
@@ -57,7 +61,7 @@ const EventWidget: FC = memo(() => {
         cbCount={handleChangeEvent}
       />
       <Counter current={count} max={max} cbCount={handleChangeEvent} />
-      <EventList />
+      <EventList current={count} />
     </section>
   );
 });

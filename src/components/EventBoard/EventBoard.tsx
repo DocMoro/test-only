@@ -40,6 +40,7 @@ const EventBoard: FC<PropsEventBoard> = memo(
             ))}
           </ul>
         </div>
+        <h3 className="board__subtitle">{eventLines[current - 1].name}</h3>
       </div>
     );
   }

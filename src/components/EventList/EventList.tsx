@@ -6,8 +6,12 @@ import EventCard from '../EventCard/EventCard';
 
 import { data } from '../../shared/constants/api';
 
+interface PropsEventList {
+  current: number
+}
+
 // Необходимо передать id в key при подключении api!!!
-const EventList: FC = memo(() => {
+const EventList: FC<PropsEventList> = memo(({current}) => {
   return (
     <Swiper
       modules={[Pagination, Navigation]}
@@ -15,7 +19,7 @@ const EventList: FC = memo(() => {
       slidesPerView={'auto'}
       pagination={{ clickable: true }}
     >
-      {data[0].eventList.map((data, index) => (
+      {data[current - 1].eventList.map((data, index) => (
         <SwiperSlide>
           <EventCard card={data} index={index} key={index} />
         </SwiperSlide>
