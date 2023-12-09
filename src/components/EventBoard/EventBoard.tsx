@@ -1,8 +1,6 @@
-import { FC, memo, useEffect } from 'react';
-import gsap from 'gsap';
+import { FC, memo } from 'react';
 
 import { IEventLine } from '../../shared/constants/type';
-import { data } from '../../shared/constants/api';
 
 import EventButton from './ui/EventButton/EventButton';
 
@@ -14,29 +12,6 @@ interface PropsEventBoard {
 
 const EventBoard: FC<PropsEventBoard> = memo(
   ({ eventLines, cbCount, current }) => {
-    const eventList = data[current - 1].eventList;
-    const startDate = eventList[0].date;
-    const endDate = eventList[eventList.length - 1].date;
-
-    useEffect(() => {
-      gsap.to('.board__date_color_blue', {
-        innerText: startDate,
-        snap: {
-          innerText: 1,
-        },
-      });
-      gsap.to('.board__btn-name_not-active', { opacity: 0 });
-      gsap
-        .timeline()
-        .to('.board__date_color_pink', {
-          innerText: endDate,
-          snap: {
-            innerText: 1,
-          },
-        })
-        .to('.board__btn-name_is-active', { opacity: 1 });
-    }, [startDate, endDate]);
-
     return (
       <div className="board">
         <div className="board__container">
