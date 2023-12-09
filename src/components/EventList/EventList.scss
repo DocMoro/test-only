@@ -1,7 +1,5 @@
 .swiper {
   width: calc(100% - 80px);
-  flex-grow: 3;
-  flex-shrink: 0;
   padding-top: 20px;
   margin-bottom: 86px;
   margin-left: 80px;
@@ -58,6 +56,8 @@
   .swiper {
     margin-bottom: 32px;
     margin-left: 20px;
+    flex-grow: 3;
+    flex-shrink: 0;
 
     border-top: 1px solid #c7cdd9;
 

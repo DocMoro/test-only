@@ -37,25 +37,31 @@ const EventBoard: FC<PropsEventBoard> = memo(
 
     return (
       <div className="board">
+        <div className="board__container">
+          <div className="board__gradient"></div>
+          <h2 className="board__title">Исторические даты</h2>
+        </div>
         <p className="board__date">
           <span className="board__date_color_blue"></span>
           &nbsp;&nbsp;
           <span className="board__date_color_pink"></span>
         </p>
-        <ul
-          className={`board__circle board__circle_amount_${eventLines.length} event-widget__btns`}
-        >
-          {eventLines.map((line) => (
-            <li className="board__circle__element">
-              <EventButton
-                current={current}
-                id={line.id}
-                key={line.id}
-                cbCount={cbCount}
-              />
-            </li>
-          ))}
-        </ul>
+        <div className="board__wrapper">
+          <ul
+            className={`board__circle board__circle_amount_${eventLines.length}`}
+          >
+            {eventLines.map((line) => (
+              <li className="board__circle__element">
+                <EventButton
+                  current={current}
+                  id={line.id}
+                  key={line.id}
+                  cbCount={cbCount}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -20,29 +20,68 @@ $half-parent: ($circle-size / 2);
 }
 
 .board {
-  &__date {
-    position: absolute;
-    top: 480px;
-    left: calc(50% - 20px);
+  position: relative;
 
+  &__wrapper {
+    position: absolute;
+    top: 215px;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  &__container {
+    position: absolute;
+    left: 0;
+    top: 170px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__gradient {
+    width: 5px;
+    height: 120px;
+    background: linear-gradient(to bottom, #3877EE, #EF5DA8);
+  }
+
+  &__title {
+    color: #42567A;
+    font-family: 'PTSans', Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+
+    max-width: 353px;
+    width: 100%;
+
+    margin-left: 80px;
+  }
+
+  &__date {
+    display: flex;
+    justify-content: center;
+  
+    position: relative;
     z-index: -1;
 
-    font-family: 'PTSans';
+    font-family: 'PTSans', Arial, Helvetica, sans-serif;
     font-size: 200px;
     font-style: normal;
     font-weight: 700;
     line-height: 160px;
     letter-spacing: -4px;
 
-    transform: translate(-50%, -50%);
+    margin: 400px 0 261px;
 
     &_color {
       &_blue {
-        color: #5D5FEF;
+        color: #5d5fef;
       }
 
       &_pink {
-        color: #EF5DA8;
+        color: #ef5da8;
       }
     }
   }
@@ -56,6 +95,8 @@ $half-parent: ($circle-size / 2);
     border-radius: 50%;
     list-style: none;
     box-sizing: content-box;
+
+    margin: 0 auto;
 
     &_amount {
       &_2 {
@@ -101,10 +142,33 @@ $half-parent: ($circle-size / 2);
   }
 }
 
-@media screen and (max-width: $mobile-width){
+@media screen and (max-width: $mobile-width) {
   .board {
     &__circle {
       display: none;
+    }
+
+    &__container {
+      top: 59px;
+    }
+
+    &__date {
+      font-size: 56px;
+      line-height: normal;
+      letter-spacing: -1.12px;
+
+      margin: 163px 0 57px;
+    }
+
+    &__gradient {
+      height: 0;
+    }
+
+    &__title {
+      font-size: 20px;
+      max-width: 123px;
+
+      margin-left: 20px;
     }
   }
 }
