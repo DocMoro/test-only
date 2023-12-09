@@ -1,0 +1,191 @@
+$circle-size: 530px;
+$item-size: 56px;
+
+$half-item: ($item-size / 2);
+$half-parent: ($circle-size / 2);
+
+@mixin amount($nb-items) {
+  $angle: (360 / $nb-items);
+  $rot: 0;
+
+  @for $i from 1 through $nb-items {
+    > :nth-of-type(#{$i}) {
+      transform: rotate($rot * 1deg)
+        translate($half-parent)
+        rotate($rot * -1deg);
+    }
+
+    $rot: ($rot + $angle);
+  }
+}
+
+.board {
+  position: relative;
+
+  &__wrapper {
+    position: absolute;
+    top: 215px;
+    left: 50%;
+
+    transform: translateX(-50%);
+  }
+
+  &__container {
+    position: absolute;
+    left: 0;
+    top: 170px;
+
+    display: flex;
+    align-items: center;
+  }
+
+  &__gradient {
+    width: 5px;
+    height: 120px;
+    background: linear-gradient(to bottom, #3877EE, #EF5DA8);
+  }
+
+  &__title {
+    color: #42567A;
+    font-family: 'PTSans', Arial, Helvetica, sans-serif;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.2;
+
+    max-width: 353px;
+    width: 100%;
+
+    margin-left: 80px;
+  }
+
+  &__date {
+    display: flex;
+    justify-content: center;
+  
+    position: relative;
+    z-index: -1;
+
+    font-family: 'PTSans', Arial, Helvetica, sans-serif;
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160px;
+    letter-spacing: -4px;
+
+    margin: 400px 0 261px;
+
+    &_color {
+      &_blue {
+        color: #5d5fef;
+      }
+
+      &_pink {
+        color: #ef5da8;
+      }
+    }
+  }
+
+  &__circle {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+    padding: 0;
+    border: 1px solid rgba(#42567a, 0.2);
+    border-radius: 50%;
+    list-style: none;
+    box-sizing: content-box;
+
+    margin: 0 auto;
+
+    &_amount {
+      &_2 {
+        @include amount(2);
+      }
+
+      &_3 {
+        @include amount(3);
+      }
+
+      &_4 {
+        @include amount(4);
+      }
+
+      &_5 {
+        @include amount(5);
+      }
+
+      &_6 {
+        @include amount(6);
+      }
+    }
+
+    &__element {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $item-size;
+      height: $item-size;
+      margin: -$half-item;
+    }
+  }
+
+  &__subtitle {
+    display: none;
+
+    color: #42567A;
+    font-family: 'PTSans', Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.5;
+
+    margin: 0 20px 0;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #c7cdd9;
+  }
+}
+
+@media screen and (max-width: $laptop-width) {
+  .board {
+    &__date {
+      font-size: 100px;
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .board {
+    &__circle {
+      display: none;
+    }
+
+    &__container {
+      top: 59px;
+    }
+
+    &__date {
+      font-size: 56px;
+      line-height: normal;
+      letter-spacing: -1.12px;
+
+      margin: 163px 0 57px;
+    }
+
+    &__gradient {
+      height: 0;
+    }
+
+    &__title {
+      font-size: 20px;
+      max-width: 123px;
+
+      margin-left: 20px;
+    }
+
+    &__subtitle {
+      display: flex;
+    }
+  }
+}

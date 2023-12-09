@@ -1,32 +1,35 @@
-.button-template {
-  width: 40px;
-  height: 40px;
-
-  background-color: #fff;
-  border: 1px solid transparent;
-  border-radius: 50%;
-
-  background-size: 5px 10px;
+@mixin counter-image {
+  background-image: url('../../assets/counter-button.svg');
+  background-size: 30% 30%;
   background-position: center;
   background-repeat: no-repeat;
+}
 
-  transform: opacity .5s ease-in-out;
+.button-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-  &_icon {
+  border: 1px solid rgba(#42567A, .5);
+  border-radius: 50%;
+
+  &_type {
     &_next {
-      background-image: url('../../assets/next.svg');
+      @include counter-image;
+      transform: rotate(-180deg);
     }
 
     &_prev {
-      background-image: url('../../assets/prev.svg');
+      @include counter-image;
     }
-  }
 
-  &:hover {
-    opacity: .5;
-  }
-
-  &_disabled {
-    opacity: .5;
+    &_text {
+      color: #42567A;
+      font-family: 'PTSans', Arial, Helvetica, sans-serif;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5;
+    }
   }
 }

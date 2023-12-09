@@ -1,8 +1,12 @@
 interface IEventCard {
-  date: string,
-  text: string
+  date: string;
+  text: string;
 }
 
-export type {
-  IEventCard,
-};
+interface IEventLine {
+  id: string;
+  name: string;
+  eventList: IEventCard[];
+}
+
+export type { IEventCard, IEventLine };

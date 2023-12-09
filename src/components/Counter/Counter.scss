@@ -1,0 +1,59 @@
+.counter {
+  display: flex;
+  flex-direction: column;
+
+  &__text {
+    color: #42567a;
+
+    font-family: 'PTSans';
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+  }
+
+  &__container {
+    display: flex;
+    margin-top: 20px;
+  }
+
+  &__button {
+    margin-right: 20px;
+    width: 40px;
+    height: 40px;
+
+    transition: opacity 0.5s ease-in-out;
+  
+    &:last-child {
+      margin-right: 0;
+    }
+  
+    &_state {
+      &_active {
+        &:hover {
+          opacity: 0.7;
+          cursor: pointer;
+        }
+      }
+  
+      &_not-active {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .counter {
+    &__container {
+      margin-top: 10px;
+    }
+
+    &__button {
+      width: 25px;
+      height: 25px;
+
+      margin-right: 8px;
+    }
+  }
+}
