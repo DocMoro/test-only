@@ -12,8 +12,9 @@ const EventWidget: FC = memo(() => {
   const max = data.length;
 
   const handleChangeEvent = useCallback((id: number) => {
-    gsap.to('.advantages-circle', { rotation: (360 / max) * (max - +id) });
-    gsap.to('.advantages-circle__element', { rotation: - (360 / max) * (max - +id) });
+    const deg = (360 / max) * (max - +id + 1);
+    gsap.to('.advantages-circle', { rotation: deg });
+    gsap.to('.advantages-circle__element', { rotation: - deg });
     setCount(id);
   }, [max]);
 
