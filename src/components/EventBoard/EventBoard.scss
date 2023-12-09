@@ -147,6 +147,14 @@ $half-parent: ($circle-size / 2);
   }
 }
 
+@media screen and (max-width: $laptop-width) {
+  .board {
+    &__date {
+      font-size: 100px;
+    }
+  }
+}
+
 @media screen and (max-width: $mobile-width) {
   .board {
     &__circle {

@@ -21,7 +21,7 @@ const EventList: FC<PropsEventList> = memo(({current}) => {
     >
       {data[current - 1].eventList.map((data, index) => (
         <SwiperSlide>
-          <EventCard card={data} index={index} key={index} />
+          <EventCard card={data} index={index} key={data.date} />
         </SwiperSlide>
       ))}
     </Swiper>
