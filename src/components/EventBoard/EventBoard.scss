@@ -19,8 +19,35 @@ $half-parent: ($circle-size / 2);
   }
 }
 
-.advantages {
-  &-circle {
+.board {
+  &__date {
+    position: absolute;
+    top: 480px;
+    left: calc(50% - 20px);
+
+    z-index: -1;
+
+    font-family: 'PTSans';
+    font-size: 200px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160px;
+    letter-spacing: -4px;
+
+    transform: translate(-50%, -50%);
+
+    &_color {
+      &_blue {
+        color: #5D5FEF;
+      }
+
+      &_pink {
+        color: #EF5DA8;
+      }
+    }
+  }
+
+  &__circle {
     position: relative;
     width: $circle-size;
     height: $circle-size;
@@ -75,7 +102,9 @@ $half-parent: ($circle-size / 2);
 }
 
 @media screen and (max-width: $mobile-width){
-  .advantages-circle {
-    display: none;
+  .board {
+    &__circle {
+      display: none;
+    }
   }
 }
