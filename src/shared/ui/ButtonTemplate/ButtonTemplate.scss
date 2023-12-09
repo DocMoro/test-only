@@ -1,41 +1,35 @@
-.button-template {
-  width: 40px;
-  height: 40px;
-
-  border: 1px solid rgba(#42567A, 0.5);
-  border-radius: 50%;
-
-  background-image: url('../../assets/swiper-button.svg');
+@mixin counter-image {
+  background-image: url('../../assets/counter-button.svg');
   background-size: 30% 30%;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: transparent;
-
-  transition: opacity 0.5s ease-in-out;
-
-  &_icon {
-    &_next {
-      transform: rotate(-180deg);
-    }
-  }
-
-  &_state {
-    &_active {
-      &:hover {
-        opacity: 0.7;
-        cursor: pointer;
-      }
-    }
-
-    &_not-active {
-      opacity: 0.5;
-    }
-  }
 }
 
-@media screen and (max-width: $mobile-width) {
-  .button-template {
-    width: 25px;
-    height: 25px;
+.button-template {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgba(#42567A, .5);
+  border-radius: 50%;
+
+  &_type {
+    &_next {
+      @include counter-image;
+      transform: rotate(-180deg);
+    }
+
+    &_prev {
+      @include counter-image;
+    }
+
+    &_text {
+      color: #42567A;
+      font-family: 'PTSans';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1.5;
+    }
   }
 }

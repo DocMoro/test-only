@@ -1,30 +1,34 @@
 import { FC, memo, useCallback } from 'react';
 
+const classType = {
+  next: 'button-template_type_next',
+  prev: 'button-template_type_prev',
+  text: 'button-template_type_text',
+};
+
 interface PropsButtonTemplate {
   cbClick: () => void;
   disabled?: boolean;
   className?: string;
-  type: 'next' | 'prev';
+  type: 'next' | 'prev' | 'text';
+  children?: string | JSX.Element;
 }
 
 const ButtonTemplate: FC<PropsButtonTemplate> = memo(
-  ({ cbClick, disabled, className, type }) => {
+  ({ cbClick, disabled, className, type, children }) => {
     const handleClick = useCallback(() => {
       cbClick();
     }, [cbClick]);
 
     return (
       <button
-        className={`button-template ${
-          disabled ? 'button-template_state_not-active' : 'button-template_state_active'
-        } ${
-          type === 'next'
-            ? 'button-template_icon_next'
-            : 'button-template_icon_prev'
-        } ${className}`}
+        className={`button-template ${classType[type]} ${className}`}
         onClick={handleClick}
         disabled={disabled}
-      ></button>
+        type="button"
+      >
+        {children}
+      </button>
     );
   }
 );
@@ -32,6 +36,7 @@ const ButtonTemplate: FC<PropsButtonTemplate> = memo(
 ButtonTemplate.defaultProps = {
   disabled: false,
   className: '',
+  children: '',
 };
 
 export default ButtonTemplate;

@@ -1,0 +1,10 @@
+.button-list__btn {
+  width: 56px;
+  height: 56px;
+
+  background-color: #42567a;
+  transform: scale(0.1);
+  transition:
+    transform 0.5s ease-in-out,
+    background-color 0.5s ease-in-out;
+}

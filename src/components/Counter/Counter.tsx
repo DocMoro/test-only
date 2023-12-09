@@ -9,6 +9,9 @@ interface PropsCounter {
 }
 
 const Counter: FC<PropsCounter> = memo(({ current, max, cbCount }) => {
+  const checkNextBtn = current === max;
+  const checkPrevBtn = current === 1;
+
   const handleClickNextBtn = useCallback(() => {
     cbCount(current + 1);
   }, [cbCount, current]);
@@ -24,14 +27,22 @@ const Counter: FC<PropsCounter> = memo(({ current, max, cbCount }) => {
         <ButtonTemplate
           type="prev"
           cbClick={handleClickPrevBtn}
-          disabled={current === 1}
-          className="counter__button"
+          disabled={checkPrevBtn}
+          className={`counter__button ${
+            checkPrevBtn
+              ? 'counter__button_state_not-active'
+              : 'counter__button_state_active'
+          }`}
         />
         <ButtonTemplate
           type="next"
           cbClick={handleClickNextBtn}
-          disabled={current === max}
-          className="counter__button"
+          disabled={checkNextBtn}
+          className={`counter__button ${
+            checkNextBtn
+              ? 'counter__button_state_not-active'
+              : 'counter__button_state_active'
+          }`}
         />
       </div>
     </article>

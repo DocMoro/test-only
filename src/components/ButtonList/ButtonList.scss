@@ -1,0 +1,68 @@
+$circle-size: 530px;
+$item-size: 56px;
+
+$half-item: ($item-size / 2);
+$half-parent: ($circle-size / 2);
+
+@mixin amount($nb-items) {
+	$angle: (360 / $nb-items);
+	$rot: 0;
+	
+	@for $i from 1 through $nb-items {
+		> :nth-of-type(#{$i}) {
+			transform: rotate($rot * 1deg) translate($half-parent) rotate($rot * -1deg);
+		}
+		
+		$rot: ($rot + $angle);
+	}
+}
+
+.advantages {
+	&-circle {
+    position: relative;
+    width: $circle-size;
+    height: $circle-size;
+    padding: 0;
+    border: 1px solid rgba(#42567a, 0.2);
+    border-radius: 50%;
+    list-style: none;
+    box-sizing: content-box;
+
+    &_amount {
+      &_2 {
+        @include amount(2);
+      }
+
+      &_3 {
+        @include amount(3);
+      }
+
+      &_4 {
+        @include amount(4);
+      }
+
+      &_5 {
+        @include amount(5);
+      }
+
+      &_6 {
+        @include amount(6);
+      }
+    }
+
+    &__element {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $item-size;
+      height: $item-size;
+      margin: -$half-item;
+
+      &:hover .button-list__btn {
+        background-color: #f4f5f9;
+        transform: scale(1);
+      }
+    }
+	}
+}
