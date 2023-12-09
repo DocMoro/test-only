@@ -2,10 +2,9 @@
   width: 100%;
   flex-grow: 3;
   flex-shrink: 0;
-
-  &-wrapper {
-    margin-left: 80px;
-  }
+  margin-bottom: 86px;
+  margin-left: 80px;
+  padding-top: 20px;
 
   &-slide {
     width: auto;
@@ -57,9 +56,10 @@
 
 @media screen and (max-width: $mobile-width) {
   .swiper {
-    &-wrapper {
-      margin-left: 20px;
-    }
+    margin-bottom: 32px;
+    margin-left: 20px;
+
+    border-top: 1px solid #c7cdd9;
 
     &-slide {
       margin-right: 25px;

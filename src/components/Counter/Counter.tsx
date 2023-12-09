@@ -21,7 +21,7 @@ const Counter: FC<PropsCounter> = memo(({ current, max, cbCount }) => {
   }, [cbCount, current]);
 
   return (
-    <article className="counter">
+    <article className="counter event-widget__counter">
       <p className="counter__text">{`0${current}/0${max}`}</p>
       <div className="counter__container">
         <ButtonTemplate

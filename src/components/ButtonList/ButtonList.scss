@@ -5,20 +5,22 @@ $half-item: ($item-size / 2);
 $half-parent: ($circle-size / 2);
 
 @mixin amount($nb-items) {
-	$angle: (360 / $nb-items);
-	$rot: 0;
-	
-	@for $i from 1 through $nb-items {
-		> :nth-of-type(#{$i}) {
-			transform: rotate($rot * 1deg) translate($half-parent) rotate($rot * -1deg);
-		}
-		
-		$rot: ($rot + $angle);
-	}
+  $angle: (360 / $nb-items);
+  $rot: 0;
+
+  @for $i from 1 through $nb-items {
+    > :nth-of-type(#{$i}) {
+      transform: rotate($rot * 1deg)
+        translate($half-parent)
+        rotate($rot * -1deg);
+    }
+
+    $rot: ($rot + $angle);
+  }
 }
 
 .advantages {
-	&-circle {
+  &-circle {
     position: relative;
     width: $circle-size;
     height: $circle-size;
@@ -59,10 +61,21 @@ $half-parent: ($circle-size / 2);
       height: $item-size;
       margin: -$half-item;
 
+      &:hover {
+        cursor: pointer;
+      }
+
       &:hover .button-list__btn {
         background-color: #f4f5f9;
         transform: scale(1);
+        cursor: pointer;
       }
     }
-	}
+  }
+}
+
+@media screen and (max-width: $mobile-width){
+  .advantages-circle {
+    display: none;
+  }
 }

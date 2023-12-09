@@ -1,10 +1,27 @@
 .event-widget {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   flex-grow: 3;
   flex-shrink: 0;
 
   &__btns {
-    margin: 215px auto 96px;
+    margin: 215px auto 76px;
+  }
+
+  &__counter {
+    position: absolute;
+    bottom: 295px;
+    left: 80px;
+  }
+}
+
+@media screen and (max-width: $mobile-width) {
+  .event-widget {
+    &__counter {
+      bottom: 13px;
+      left: 20px;
+    }
   }
 }
