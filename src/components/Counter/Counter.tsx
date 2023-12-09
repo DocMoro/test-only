@@ -2,13 +2,14 @@ import { FC, memo, useCallback } from 'react';
 
 import ButtonTemplate from '../../shared/ui/ButtonTemplate/ButtonTemplate';
 
+import { max } from '../../shared/constants/api';
+
 interface PropsCounter {
   current: number;
-  max: number;
   cbCount: (current: number) => void;
 }
 
-const Counter: FC<PropsCounter> = memo(({ current, max, cbCount }) => {
+const Counter: FC<PropsCounter> = memo(({ current, cbCount }) => {
   const checkNextBtn = current === max;
   const checkPrevBtn = current === 1;
 

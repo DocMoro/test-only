@@ -111,4 +111,6 @@ const data = [
   },
 ];
 
-export { data };
+const max = data.length;
+
+export { data, max };
