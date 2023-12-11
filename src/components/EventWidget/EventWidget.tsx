@@ -11,17 +11,14 @@ import useAnimated from './hooks/useAnimated';
 
 const EventWidget: FC = memo(() => {
   const [count, setCount] = useState<number>(1);
-  const boxRef = useRef(null);
+  const boxRef = useRef<HTMLDivElement>(null);
 
   useAnimated(count, boxRef);
 
   const handleChangeEvent = useCallback((id: number) => {
     const deg = (360 / max) * (max - id + 1);
-    gsap.context(() => {
-      gsap.to('.board__circle', { rotation: deg });
-      gsap.to('.board__circle__element', { rotation: -deg });
-      gsap.to('.swiper-wrapper', { opacity: 0 });
-    }, boxRef);
+    gsap.to('.board__circle', { rotation: deg });
+    gsap.to('.board__circle-element', { rotation: -deg });
     setCount(id);
   }, []);
 

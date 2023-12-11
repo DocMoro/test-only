@@ -3,13 +3,14 @@ import gsap from 'gsap';
 
 import { data } from '../../../shared/constants/api';
 
-export default function useAnimated(count: number, boxRef: any) {
+export default function useAnimated(count: number, boxRef: React.RefObject<HTMLDivElement>) {
   const eventList = data[count - 1].eventList;
   const startDate = eventList[0].date;
   const endDate = eventList[eventList.length - 1].date;
 
   useEffect(() => {
     gsap.context(() => {
+      gsap.to('.swiper-wrapper', { opacity: 0 });
       gsap.to('.board__btn-name_not-active', { opacity: 0 });
       gsap
         .timeline()

@@ -20,8 +20,8 @@ const EventList: FC<PropsEventList> = memo(({ current }) => {
       pagination={{ clickable: true }}
     >
       {data[current - 1].eventList.map((data, index) => (
-        <SwiperSlide>
-          <EventCard card={data} index={index} key={data.date} />
+        <SwiperSlide key={data.date}>
+          <EventCard card={data} index={index} />
         </SwiperSlide>
       ))}
     </Swiper>

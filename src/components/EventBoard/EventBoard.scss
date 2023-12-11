@@ -121,16 +121,16 @@ $half-parent: math.div($circle-size, 2);
         @include amount(6);
       }
     }
+  }
 
-    &__element {
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: $item-size;
-      height: $item-size;
-      margin: -$half-item;
-    }
+  &__circle-element {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: $item-size;
+    height: $item-size;
+    margin: -$half-item;
   }
 
   &__subtitle {

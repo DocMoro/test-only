@@ -1,5 +1,4 @@
-import { FC, memo, useCallback, useEffect } from 'react';
-import gsap from 'gsap';
+import { FC, memo, useCallback } from 'react';
 
 import ButtonTemplate from '../../../../shared/ui/ButtonTemplate/ButtonTemplate';
 
@@ -17,10 +16,6 @@ const EventButton: FC<PropsEventButton> = memo(
     const handleClick = useCallback(() => {
       cbCount(+id);
     }, [cbCount, id]);
-
-    useEffect(() => {
-      gsap.to('board__btn-name_is-active', { opacity: 0 });
-    }, [isActive]);
 
     return (
       <div className="board__btn-container">

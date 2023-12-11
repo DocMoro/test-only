@@ -28,11 +28,10 @@ const EventBoard: FC<PropsEventBoard> = memo(
             className={`board__circle board__circle_amount_${eventLines.length}`}
           >
             {eventLines.map((line) => (
-              <li className="board__circle__element">
+              <li className="board__circle-element" key={line.id}>
                 <EventButton
                   current={current}
                   id={line.id}
-                  key={line.id}
                   cbCount={cbCount}
                   name={line.name}
                 />
