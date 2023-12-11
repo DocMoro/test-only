@@ -1,16 +1,22 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
 
-import { data } from '../../../shared/constants/api';
+import { data, max } from '../../../shared/constants/api';
 
-export default function useAnimated(count: number, boxRef: React.RefObject<HTMLDivElement>) {
-  const eventList = data[count - 1].eventList;
-  const startDate = eventList[0].date;
-  const endDate = eventList[eventList.length - 1].date;
-
+export default function useAnimated(
+  count: number,
+  boxRef: React.RefObject<HTMLDivElement>
+) {
   useEffect(() => {
+    const eventList = data[count - 1].eventList;
+    const startDate = eventList[0].date;
+    const endDate = eventList[eventList.length - 1].date;
+    const deg = (360 / max) * (max - count + 1);
     gsap.context(() => {
+      gsap.to('.board__circle', { rotation: deg });
+      gsap.to('.board__circle-element', { rotation: -deg });
       gsap.to('.swiper-wrapper', { opacity: 0 });
+      gsap.to('.board__subtitle', {opacity: 0});
       gsap.to('.board__btn-name_not-active', { opacity: 0 });
       gsap
         .timeline()
@@ -35,7 +41,8 @@ export default function useAnimated(count: number, boxRef: React.RefObject<HTMLD
             innerText: 1,
           },
         })
-        .to('.board__btn-name_is-active', { opacity: 1 });
+        .to('.board__btn-name_is-active', { opacity: 1 })
+        .to('.board__btn-name_not-active', { opacity: 0 }, '-=.5');
     }, boxRef);
-  }, [startDate, endDate, boxRef]);
+  }, [count, boxRef]);
 }

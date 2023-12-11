@@ -1,11 +1,10 @@
 import { FC, memo, useState, useCallback, useRef } from 'react';
-import gsap from 'gsap';
 
 import EventList from '../EventList/EventList';
 import Counter from '../Counter/Counter';
 import EventBoard from '../EventBoard/EventBoard';
 
-import { data, max } from '../../shared/constants/api';
+import { data } from '../../shared/constants/api';
 
 import useAnimated from './hooks/useAnimated';
 
@@ -16,9 +15,6 @@ const EventWidget: FC = memo(() => {
   useAnimated(count, boxRef);
 
   const handleChangeEvent = useCallback((id: number) => {
-    const deg = (360 / max) * (max - id + 1);
-    gsap.to('.board__circle', { rotation: deg });
-    gsap.to('.board__circle-element', { rotation: -deg });
     setCount(id);
   }, []);
 
