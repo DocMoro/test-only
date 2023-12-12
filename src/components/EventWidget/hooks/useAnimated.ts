@@ -17,7 +17,6 @@ export default function useAnimated(
       gsap.to('.board__circle-element', { rotation: -deg });
       gsap.to('.swiper-wrapper', { opacity: 0 });
       gsap.to('.board__subtitle', { opacity: 0 });
-      gsap.to('.board__btn-name_not-active', { opacity: 0 });
       gsap
         .timeline()
         .to('.board__date_color_blue', {
@@ -41,8 +40,7 @@ export default function useAnimated(
             innerText: 1,
           },
         })
-        .to('.board__btn-name_is-active', { opacity: 1 })
-        .to('.board__btn-name_not-active', { opacity: 0 }, '-=.5');
+        .fromTo('.board__btn-name_is-active', { opacity: 0 }, { opacity: 1 });
     }, boxRef);
   }, [count, boxRef]);
 }
