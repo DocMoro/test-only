@@ -1,8 +1,10 @@
+$margin-left: min(8.6vw, 80px);
+
 .swiper {
-  width: calc(100% - 80px);
+  width: calc(100% - $margin-left);
   padding-top: 20px;
   margin-bottom: 86px;
-  margin-left: 80px;
+  margin-left: $margin-left;
 
   &-slide {
     width: auto;
@@ -54,6 +56,7 @@
 
 @media screen and (max-width: $mobile-width) {
   .swiper {
+    width: calc(100% - 20px);
     margin-bottom: 32px;
     margin-left: 20px;
     flex-grow: 3;

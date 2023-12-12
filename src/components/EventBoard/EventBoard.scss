@@ -35,7 +35,9 @@ $half-parent: math.div($circle-size, 2);
   &__container {
     position: absolute;
     left: 0;
-    top: 170px;
+    top: clamp(59px, 14vw, 170px);
+
+    font-size: clamp(20px, 6vw, 56px);
 
     display: flex;
     align-items: center;
@@ -43,22 +45,22 @@ $half-parent: math.div($circle-size, 2);
 
   &__gradient {
     width: 5px;
-    height: 120px;
+    height: 2.15em;
     background: linear-gradient(to bottom, #3877ee, #ef5da8);
   }
 
   &__title {
     color: #42567a;
     font-family: 'PTSans', Arial, Helvetica, sans-serif;
-    font-size: 56px;
+    font-size: 1em;
     font-style: normal;
     font-weight: 700;
     line-height: 1.2;
 
-    max-width: 353px;
+    max-width: 6.3em;
     width: 100%;
 
-    margin-left: 80px;
+    margin-left: min(80px, 1.43em);
   }
 
   &__date {
@@ -69,13 +71,13 @@ $half-parent: math.div($circle-size, 2);
     z-index: -1;
 
     font-family: 'PTSans', Arial, Helvetica, sans-serif;
-    font-size: 200px;
+    font-size: clamp(56px, 17vw, 200px);
     font-style: normal;
     font-weight: 700;
     line-height: 160px;
     letter-spacing: -4px;
 
-    margin: 400px 0 261px;
+    margin: min(45vw, 400px) 0 261px;
 
     &_color {
       &_blue {
@@ -151,10 +153,6 @@ $half-parent: math.div($circle-size, 2);
 
 @media screen and (max-width: $laptop-width) {
   .board {
-    &__date {
-      font-size: 100px;
-    }
-
     &__circle {
       display: none;
     }
@@ -163,12 +161,7 @@ $half-parent: math.div($circle-size, 2);
 
 @media screen and (max-width: $mobile-width) {
   .board {
-    &__container {
-      top: 59px;
-    }
-
     &__date {
-      font-size: 56px;
       line-height: normal;
       letter-spacing: -1.12px;
 
@@ -180,9 +173,6 @@ $half-parent: math.div($circle-size, 2);
     }
 
     &__title {
-      font-size: 20px;
-      max-width: 123px;
-
       margin-left: 20px;
     }
 
