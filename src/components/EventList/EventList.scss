@@ -8,7 +8,7 @@ $margin-left: min(8.6vw, 80px);
 
   &-slide {
     width: auto;
-    margin-right: 80px;
+    margin-right: $margin-left;
   }
 
   &-pagination {
