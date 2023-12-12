@@ -16,7 +16,7 @@ export default function useAnimated(
       gsap.to('.board__circle', { rotation: deg });
       gsap.to('.board__circle-element', { rotation: -deg });
       gsap.to('.swiper-wrapper', { opacity: 0 });
-      gsap.to('.board__subtitle', {opacity: 0});
+      gsap.to('.board__subtitle', { opacity: 0 });
       gsap.to('.board__btn-name_not-active', { opacity: 0 });
       gsap
         .timeline()

@@ -41,6 +41,8 @@
     font-weight: 700;
     line-height: 1.5;
 
-    opacity: 0;
+    &_not-active {
+      visibility: hidden;
+    }
   }
 }
