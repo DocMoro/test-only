@@ -11,7 +11,7 @@
 
   &__counter {
     position: absolute;
-    bottom: 295px;
+    top: min(80vw, 723px);
     left: min(8.6vw, 80px);
   }
 
@@ -59,6 +59,7 @@
 @media screen and (max-width: $mobile-width) {
   .event-widget {
     &__counter {
+      top: auto;
       bottom: 13px;
       left: 20px;
     }

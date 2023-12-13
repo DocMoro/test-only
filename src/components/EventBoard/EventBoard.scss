@@ -77,7 +77,7 @@ $half-parent: math.div($circle-size, 2);
     line-height: 160px;
     letter-spacing: -4px;
 
-    margin: min(45vw, 400px) 0 261px;
+    margin: min(45vw, 400px) 0 min(29vw, 261px);
 
     &_color {
       &_blue {
