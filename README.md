@@ -28,3 +28,6 @@ npm start
 - [x] gsap;
 - [x] swiper;
 - [x] sass;
+
+**_Ссылка на [техническое задание](https://docs.google.com/document/d/1Qy4MN7duYzm-Wr-rQ4TFApvUoxfuqGXdcyA8-vt5Dhg/edit)_**
+**_Ссылка на [продакшн](https://DocMoro.github.io/test-only)_**
