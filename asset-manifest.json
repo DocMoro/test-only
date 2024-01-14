@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/test-only/static/css/main.98878388.css",
+    "main.js": "/test-only/static/js/main.20a649fe.js",
+    "static/js/787.77950ec1.chunk.js": "/test-only/static/js/787.77950ec1.chunk.js",
+    "static/media/PTSans-Bold.woff2": "/test-only/static/media/PTSans-Bold.06d52638af3e838cb671.woff2",
+    "static/media/PTSans-Regular.woff2": "/test-only/static/media/PTSans-Regular.ac2960c569798492ef61.woff2",
+    "static/media/BebasNeueRegular.woff2": "/test-only/static/media/BebasNeueRegular.6f25f09874c1350d2e83.woff2",
+    "index.html": "/test-only/index.html",
+    "static/media/counter-button.svg": "/test-only/static/media/counter-button.97a6fde2cec4c444c45d.svg",
+    "static/media/button.svg": "/test-only/static/media/button.49457574fc11367049bc.svg",
+    "main.98878388.css.map": "/test-only/static/css/main.98878388.css.map",
+    "main.20a649fe.js.map": "/test-only/static/js/main.20a649fe.js.map",
+    "787.77950ec1.chunk.js.map": "/test-only/static/js/787.77950ec1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.98878388.css",
+    "static/js/main.20a649fe.js"
+  ]
+}
